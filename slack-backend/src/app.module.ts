@@ -10,6 +10,7 @@ import { CalendarModule } from './calendar/calendar.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { EventsModule } from './events/events.module';
 
 @UseGuards(AuthGuard('jwt'))
 @Module({
@@ -29,7 +30,8 @@ import { AuthGuard } from '@nestjs/passport';
     UsersModule, 
     ChatModule, 
     TasksModule, 
-    CalendarModule,
+    CalendarModule, 
+    EventsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -8,7 +8,10 @@ import { ChatModule } from './chat/chat.module';
 import { TasksModule } from './tasks/tasks.module';
 import { CalendarModule } from './calendar/calendar.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 
+@UseGuards(AuthGuard('jwt'))
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }), 
